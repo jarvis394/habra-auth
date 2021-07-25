@@ -214,6 +214,11 @@ export const makeRequest = async <T = unknown>({
 	version?: 1 | 2
 	requestParams: Partial<AxiosRequestConfig>
 }): Promise<AxiosResponse<T>> => {
+	const headers = {
+		Cookie: `connect_sid=${connectSID}`,
+	}
+	if (csrfToken) headers['csrf-token'] = csrfToken
+
 	const res = await axios({
 		method: requestParams?.method || 'GET',
 		url: `https://habr.com/kek/v${version}/${method}`,
@@ -225,8 +230,7 @@ export const makeRequest = async <T = unknown>({
 		},
 		headers: {
 			...requestParams.headers,
-			Cookie: `connect_sid=${connectSID}`,
-			'csrf-token': csrfToken,
+			...headers
 		},
 	})
 	return res
