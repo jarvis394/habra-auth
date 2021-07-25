@@ -1,0 +1,29 @@
+{
+  "name": "habra-auth",
+  "version": "3.0.0",
+  "description": "Authentication for Habrahabr using its API",
+  "main": "dist/index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.3",
+    "node-fetch": "^2.6.1",
+    "set-cookie-parser": "^2.4.8",
+    "typescript": "^4.0.5"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.22",
+    "@types/node-fetch": "^2.5.7",
+    "@types/set-cookie-parser": "^2.4.1"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "ts-node examples/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "jarvis394",
+  "license": "ISC",
+  "homepage": "https://github.com/jarvis394/habra-auth"
+}

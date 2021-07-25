@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "removeComments": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": false,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": false,
+    "declaration": true,
+    "lib": ["es5", "es2015.promise", "dom", "es2015"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.(t|j)s"],
+}
