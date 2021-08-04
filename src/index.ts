@@ -195,7 +195,7 @@ export const getAccountAuthData = async ({ email, password }: { email: string; p
 			Referer: 'https://account.habr.com/',
 			Cookie: `connect_sid=${connectSID}; habrsession_id=${habrSessionID}; fl=ru; hl=ru; acc_csid=${acc_csid}; habr_web_redirect_back=%2Fru%2Fall%2F; PHPSESSID=${PHPSESSID}; hsec_id=${hsec_id}`,
 		},
-		maxRedirects: 0
+		maxRedirects: 0,
 	})
 
 	return { connectSID, habrSessionID, acc_csid, PHPSESSID, hsec_id }
@@ -230,8 +230,9 @@ export const makeRequest = async <T = unknown>({
 		},
 		headers: {
 			...requestParams.headers,
-			...headers
+			...headers,
 		},
+		...requestParams,
 	})
 	return res
 }
