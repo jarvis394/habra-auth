@@ -1,6 +1,6 @@
 {
   "name": "habra-auth",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Authentication for Habrahabr using its API",
   "main": "dist/index.js",
   "directories": {
