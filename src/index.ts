@@ -272,7 +272,7 @@ export const getToken = async ({
  */
 export const getCSRFToken = async ({ connectSID, habrSessionID, acc_csid, PHPSESSID, hsec_id }) => {
 	try {
-		const response = await axios.get('https://m.habr.com/', {
+		const response = await axios.get('https://habr.com/ru/all', {
 			headers: {
 				Cookie: `connect_sid=${connectSID}; habrsession_id=${habrSessionID}; fl=ru; hl=ru; acc_csid=${acc_csid}; habr_web_redirect_back=%2Fru%2Fall%2F; PHPSESSID=${PHPSESSID}; hsec_id=${hsec_id}`,
 			},
